@@ -2,6 +2,7 @@ package de.tum.in.ase;
 
 import org.checkerframework.checker.nullness.qual.NonNull;
 import org.checkerframework.checker.nullness.qual.Nullable;
+import org.json.JSONObject;
 
 public class User {
 
@@ -22,13 +23,21 @@ public class User {
         this.profileDescription = profileDescription;
     }
 
-//    /**
-//     * Serializes the User object into a JSONObject
-//     * @return The serialized user as JSONObject
-//     */
-//    public @NonNull JSONObject toJson(){
-//        TODO: Task 2.1: implement toJson()
-//    }
+    /**
+     * Serializes the User object into a JSONObject
+     * @return The serialized user as JSONObject
+     */
+    public @NonNull JSONObject toJson(){
+        //TODO: Task 2.1: implement toJson()
+        JSONObject userJson = new JSONObject();
+        if (profileDescription != null) {
+            userJson.put("profileDescription", profileDescription);
+        }
+        userJson.put("name", name);
+        userJson.put("role", role);
+
+        return userJson;
+    }
 
 //    /**
 //     * Deserializes the JSONObject to a User object.
