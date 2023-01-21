@@ -27,7 +27,7 @@ public class User {
      * Serializes the User object into a JSONObject
      * @return The serialized user as JSONObject
      */
-    public @NonNull JSONObject toJson(){
+    public @NonNull JSONObject toJson() {
         //TODO: Task 2.1: implement toJson()
         JSONObject userJson = new JSONObject();
         if (profileDescription != null) {
