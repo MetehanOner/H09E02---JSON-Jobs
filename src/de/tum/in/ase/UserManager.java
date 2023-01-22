@@ -3,6 +3,7 @@ package de.tum.in.ase;
 import org.checkerframework.checker.nullness.qual.NonNull;
 import org.json.CDL;
 import org.json.JSONArray;
+import org.json.JSONObject;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -23,14 +24,23 @@ public class UserManager {
      */
     public @NonNull String serializeUsers() {
         // TODO: Task 2.2: implement serializeUsers()
+        JSONArray jArray = new JSONArray();
 
-        StringBuilder userString = new StringBuilder();
         for (User user : users) {
-            userString.append(user.toString());
+            JSONObject jsonObject = new JSONObject();
+
+            if (user.getProfileDescription() != null) {
+                jsonObject.put("profileDescription", user.getProfileDescription());
+            }
+
+            jsonObject.put("role", user.getRole());
+            jsonObject.put("name", user.getName());
+
+            jArray.put(jsonObject);
         }
 
-        JSONArray result = CDL.toJSONArray(userString.toString());
-        return result.toString();
+
+        return jArray.toString();
 
     }
 

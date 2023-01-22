@@ -25,6 +25,22 @@ public class Artemis {
 
     public static void main(String[] args) {
         // You can test your code here
+        User u = new User("metehan", "student");
+        User u0 = new User("mary", "student");
+        User u1 = new User("astrid", "student");
+        User u2 = new User("ingrid", "student");
+        User u3 = new User("irmi", "student");
+
+        UserManager uM = new UserManager();
+
+        uM.getUsers().add(u);
+        uM.getUsers().add(u0);
+        uM.getUsers().add(u1);
+        uM.getUsers().add(u2);
+        uM.getUsers().add(u3);
+
+        uM.serializeUsers();
+
     }
 
 }
