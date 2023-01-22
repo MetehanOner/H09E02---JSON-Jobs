@@ -39,15 +39,21 @@ public class User {
         return userJson;
     }
 
-//    /**
-//     * Deserializes the JSONObject to a User object.
-//     * @param json The JSONObject to deserialize
-//     * @return The deserialized User
-//     */
-//    public static @NonNull User fromJson(@NonNull JSONObject json) {
-//        TODO: Task 2.3: implement fromJson(JSONObject)
-//        return null;
-//    }
+    /**
+     * Deserializes the JSONObject to a User object.
+     * @param json The JSONObject to deserialize
+     * @return The deserialized User
+     */
+    public static @NonNull User fromJson(@NonNull JSONObject json) {
+//      TODO: Task 2.3: implement fromJson(JSONObject)
+        User exampleUser = new User(json.getString("name"), json.getString("role"));
+
+        if (json.get("profileDescription") != null) {
+            exampleUser.profileDescription = json.getString("profileDescription");
+        }
+
+        return exampleUser;
+    }
 
     public @NonNull String getName() {
         return name;

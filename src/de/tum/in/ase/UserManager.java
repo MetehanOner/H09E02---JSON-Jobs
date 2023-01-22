@@ -1,6 +1,8 @@
 package de.tum.in.ase;
 
 import org.checkerframework.checker.nullness.qual.NonNull;
+import org.json.CDL;
+import org.json.JSONArray;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -21,7 +23,15 @@ public class UserManager {
      */
     public @NonNull String serializeUsers() {
         // TODO: Task 2.2: implement serializeUsers()
-        return "";
+
+        StringBuilder userString = new StringBuilder();
+        for (User user : users) {
+            userString.append(user.toString());
+        }
+
+        JSONArray result = CDL.toJSONArray(userString.toString());
+        return result.toString();
+
     }
 
     /**
