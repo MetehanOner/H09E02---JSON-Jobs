@@ -1,9 +1,9 @@
 package de.tum.in.ase;
 
 import org.checkerframework.checker.nullness.qual.NonNull;
+import org.json.CDL;
 import org.json.JSONArray;
 import org.json.JSONObject;
-
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Optional;
@@ -50,6 +50,25 @@ public class UserManager {
      */
     public void loadUsers(@NonNull String json) {
         // TODO: Task 2.4: implement loadUsers()
+
+        throw new IllegalArgumentException(json);
+
+        /*JSONObject obj = new JSONObject(json);
+        JSONArray userData = obj.getJSONArray(json);
+        int n = userData.length();
+
+        for (int i = 0; i < n; ++i) {
+            JSONObject person = userData.getJSONObject(i);
+
+            person.getInt("id");
+            person.getString("name");
+            person.getString("gender");
+            person.getDouble("latitude");
+            person.getDouble("longitude");
+
+        }*/
+
+
     }
 
     /**
