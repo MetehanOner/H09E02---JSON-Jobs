@@ -50,25 +50,23 @@ public class UserManager {
      */
     public void loadUsers(@NonNull String json) {
         // TODO: Task 2.4: implement loadUsers()
+        users.clear();
 
-        throw new IllegalArgumentException(json);
+        JSONArray userData = new JSONArray(json);
 
-        /*JSONObject obj = new JSONObject(json);
-        JSONArray userData = obj.getJSONArray(json);
         int n = userData.length();
 
         for (int i = 0; i < n; ++i) {
-            JSONObject person = userData.getJSONObject(i);
+            JSONObject obj = userData.getJSONObject(i);
 
-            person.getInt("id");
-            person.getString("name");
-            person.getString("gender");
-            person.getDouble("latitude");
-            person.getDouble("longitude");
+            User exampleUser = new User(obj.getString("name"), obj.getString("role"));
 
-        }*/
+            if (obj.getString("profileDescription") != null) {
+                exampleUser.setProfileDescription(obj.getString("profileDescription"));
+            }
 
-
+            users.add(exampleUser);
+        }
     }
 
     /**

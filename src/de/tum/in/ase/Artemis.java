@@ -31,6 +31,12 @@ public class Artemis {
         User u2 = new User("ingrid", "student");
         User u3 = new User("irmi", "student");
 
+        String s = "{\n"+
+                "    \"name\": \"Maria Mustermann\",\n" +
+                "    \"role\": \"admin\",\n" +
+                "    \"profileDescription\": \"Hi, my name is Maria!\"\n" +
+                "}";
+
         UserManager uM = new UserManager();
 
         uM.getUsers().add(u);
@@ -39,7 +45,8 @@ public class Artemis {
         uM.getUsers().add(u2);
         uM.getUsers().add(u3);
 
-        uM.serializeUsers();
+        //uM.serializeUsers();
+        uM.loadUsers(s);
 
     }
 
