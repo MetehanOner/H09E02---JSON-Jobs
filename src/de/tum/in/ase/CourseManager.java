@@ -31,7 +31,7 @@ public class CourseManager {
         for (int i = 0; i < n; ++i) {
             JSONObject obj = courseData.getJSONObject(i);
 
-            CourseAccess courseAccess = obj.getEnum(CourseAccess.class,"access");
+            CourseAccess courseAccess = obj.getEnum(CourseAccess.class, "access");
             JSONArray participantArray = obj.getJSONArray("participantNames");
 
             UserManager userManager = artemis.getUserManager();

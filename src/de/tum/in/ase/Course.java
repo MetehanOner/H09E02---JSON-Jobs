@@ -51,10 +51,10 @@ public class Course {
     public static @NonNull Course fromJson(@NonNull JSONObject json, @NonNull UserManager userManager) {
 //      TODO: Task 3.2: implement fromJson()
 
-        CourseAccess courseAccess = json.getEnum(CourseAccess.class,"access");
+        CourseAccess courseAccess = json.getEnum(CourseAccess.class, "access");
         JSONArray participantArray = json.getJSONArray("participantNames");
 
-        List<User> userList = participantArray.toList().stream().map(user->userManager.getUserByName(user.toString()).orElse(null)).toList();
+        List<User> userList = participantArray.toList().stream().map(user -> userManager.getUserByName(user.toString()).orElse(null)).toList();
 
         return new Course(json.getString("name"), courseAccess, userList, json.getString("description"));
     }
