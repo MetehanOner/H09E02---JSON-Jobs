@@ -40,7 +40,7 @@ public class Course {
             participantArray.put(user.getName());
         }
 
-        courseJson.put("participants" ,participantArray);
+        courseJson.put("participantNames" ,participantArray);
 
         return courseJson;
     }
@@ -55,7 +55,7 @@ public class Course {
 //      TODO: Task 3.2: implement fromJson()
 
         CourseAccess courseAccess = json.getEnum(CourseAccess.class,"access");
-        JSONArray participantArray = json.getJSONArray("participant");
+        JSONArray participantArray = json.getJSONArray("participantNames");
 
         List<User> userList = participantArray.toList().stream().map(user->userManager.getUserByName(user.toString()).orElse(null)).toList();
 

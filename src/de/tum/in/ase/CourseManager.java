@@ -33,7 +33,7 @@ public class CourseManager {
             JSONObject obj = courseData.getJSONObject(i);
 
             CourseAccess courseAccess = obj.getEnum(CourseAccess.class,"access");
-            JSONArray participantArray = obj.getJSONArray("participant");
+            JSONArray participantArray = obj.getJSONArray("participantNames");
 
             UserManager userManager = artemis.getUserManager();
             List<User> userList = participantArray.toList().stream().map(user -> userManager.getUserByName(user.toString()).orElse(null)).toList();
@@ -61,7 +61,7 @@ public class CourseManager {
 
             JSONArray pArray = new JSONArray();
             pArray.put(course.getParticipants());
-            jsonObj.put("participants", pArray);
+            jsonObj.put("participantNames", pArray);
 
             jArray.put(jsonObj);
         }
