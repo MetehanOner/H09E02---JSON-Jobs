@@ -2,9 +2,6 @@ package de.tum.in.ase;
 
 import org.checkerframework.checker.nullness.qual.NonNull;
 
-import java.util.ArrayList;
-import java.util.List;
-
 public class Artemis {
 
     private UserManager userManager;
