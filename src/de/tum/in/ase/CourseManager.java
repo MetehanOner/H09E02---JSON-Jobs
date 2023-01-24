@@ -28,7 +28,7 @@ public class CourseManager {
 
         int n = courseData.length();
 
-        for (int i = 0; i < n; ++i) {
+        for (int i = 0; i < n; i++) {
             JSONObject obj = courseData.getJSONObject(i);
 
             CourseAccess courseAccess = obj.getEnum(CourseAccess.class, "access");
@@ -58,9 +58,11 @@ public class CourseManager {
             jsonObj.put("access", course.getCourseAccess());
             jsonObj.put("description", course.getDescription());
 
-            JSONArray pArray = new JSONArray();
-            pArray.put(course.getParticipants());
-            jsonObj.put("participantNames", pArray);
+            JSONArray participantsArray = new JSONArray();
+            for (int i = 0; i < course.getParticipants().size(); i++) {
+                participantsArray.put(course.getParticipants().get(i).getName());
+            }
+            jsonObj.put("participantNames", participantsArray);
 
             jArray.put(jsonObj);
         }

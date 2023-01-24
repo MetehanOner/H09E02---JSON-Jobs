@@ -13,7 +13,7 @@ public class Utils {
      * @return The JSONArray containing the parsed users
      */
     public @NonNull JSONArray jsonArrayFromUserList(@NonNull List<User> userList) {
-//        TODO: Bonus Task: implement jsonArrayFromUserList()
+//      TODO: Bonus Task: implement jsonArrayFromUserList()
         JSONArray userArray = new JSONArray();
 
         userArray.put(userList.stream().map(User::toJson).collect(Collectors.toList()));
@@ -27,7 +27,7 @@ public class Utils {
      * @return The JSONArray containing the parsed courses
      */
     public @NonNull JSONArray jsonArrayFromCourseList(@NonNull List<Course> courseList) {
-//        TODO: Bonus Task: implement jsonArrayFromCourseList()
+//      TODO: Bonus Task: implement jsonArrayFromCourseList()
         JSONArray courseArray = new JSONArray();
 
         courseArray.put(courseList.stream().map(Course::toJson).collect(Collectors.toList()));
