@@ -28,7 +28,7 @@ public class Artemis {
 
     public static void main(String[] args) {
         // You can test your code here
-        Artemis artemis = new Artemis();
+        /*Artemis artemis = new Artemis();
 
         UserManager uM = new UserManager();
         CourseManager cM = new CourseManager(artemis);
@@ -42,11 +42,6 @@ public class Artemis {
         User u2 = new User("ingrid", "student");
         User u3 = new User("irmi", "student");
 
-        /*String s = "{\n"+
-                "    \"name\": \"Maria Mustermann\",\n" +
-                "    \"role\": \"admin\",\n" +
-                "    \"profileDescription\": \"Hi, my name is Maria!\"\n" +
-                "}";*/
 
         uM.getUsers().add(u);
         uM.getUsers().add(u0);
@@ -72,11 +67,11 @@ public class Artemis {
         participants1.add(u2);
         participants1.add(u3);
 
-        Course c0 = new Course("ITP", CourseAccess.PRIVATE, participants,"description 0.0");
-        Course c1 = new Course("ILA", CourseAccess.PUBLIC, participants0,"description 0.1");
-        Course c2 = new Course("IFA", CourseAccess.RESTRICTED, participants1,"description 0.2");
-        Course c3 = new Course("INA", CourseAccess.PUBLIC, participants0,"description 0.3");
-        Course c4 = new Course("RED", CourseAccess.PRIVATE, participants,"description 0.4");
+        Course c0 = new Course("ITP", CourseAccess.PRIVATE, participants, "description 0.0");
+        Course c1 = new Course("ILA", CourseAccess.PUBLIC, participants0, "description 0.1");
+        Course c2 = new Course("IFA", CourseAccess.RESTRICTED, participants1, "description 0.2");
+        Course c3 = new Course("INA", CourseAccess.PUBLIC, participants0, "description 0.3");
+        Course c4 = new Course("RED", CourseAccess.PRIVATE, participants, "description 0.4");
         Course c5 = new Course("YELLOW", CourseAccess.RESTRICTED, participants1,"description 0.5");
 
         cM.getCourses().add(c0);
@@ -86,7 +81,7 @@ public class Artemis {
         cM.getCourses().add(c4);
         cM.getCourses().add(c5);
 
-        cM.serializeCourses();
+        cM.serializeCourses();*/
 
     }
 
